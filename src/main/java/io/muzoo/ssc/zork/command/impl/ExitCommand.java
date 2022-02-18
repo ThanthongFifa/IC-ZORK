@@ -1,6 +1,9 @@
-package io.muzoo.ssc.zork.command;
+package io.muzoo.ssc.zork.command.impl;
 
 import io.muzoo.ssc.zork.Game;
+import io.muzoo.ssc.zork.command.Command;
+
+import java.util.List;
 
 public class ExitCommand implements Command {
     @Override
@@ -14,7 +17,7 @@ public class ExitCommand implements Command {
     }
 
     @Override
-    public void execute(Game game) {
+    public void execute(Game game, List<String> args) {
         game.exit();
     }
 }

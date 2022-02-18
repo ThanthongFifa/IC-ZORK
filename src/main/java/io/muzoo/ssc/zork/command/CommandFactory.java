@@ -1,15 +1,20 @@
 package io.muzoo.ssc.zork.command;
 
+import io.muzoo.ssc.zork.command.impl.ExitCommand;
+import io.muzoo.ssc.zork.command.impl.InfoCommand;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CommandFactory {
 
     private static final List<Class<? extends Command>> COMMANDS = Arrays.asList(
-            ExitCommand.class
+            ExitCommand.class,
+            InfoCommand.class
     );
 
     private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
@@ -33,5 +38,9 @@ public class CommandFactory {
 
     public static Command get(String command){
         return COMMAND_MAP.get(command);
+    }
+
+    public static List<String> getAll(){
+        return COMMAND_MAP.keySet().stream().collect(Collectors.toList());
     }
 }
