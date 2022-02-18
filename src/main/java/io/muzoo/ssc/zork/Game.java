@@ -1,6 +1,7 @@
 package io.muzoo.ssc.zork;
 
-import io.muzoo.ssc.zork.command.ExitCommand;
+import io.muzoo.ssc.zork.command.Command;
+import io.muzoo.ssc.zork.command.CommandFactory;
 
 import java.util.Scanner;
 
@@ -26,9 +27,14 @@ public class Game {
             System.out.println("Enter command: ");
             String rawInput = scaner.nextLine();
 
-            ExitCommand exitCommand = new ExitCommand();
-            exitCommand.execute(this);
+            Command command = CommandFactory.get(rawInput);
+            if (command == null){
+                System.out.println("this command does not exist");
+            } else {
+                command.execute(this);
+            }
         }
+
         scaner.close();
     }
 }
