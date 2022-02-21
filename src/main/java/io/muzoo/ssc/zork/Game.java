@@ -4,16 +4,26 @@ import io.muzoo.ssc.zork.command.Command;
 import io.muzoo.ssc.zork.command.CommandFactory;
 import io.muzoo.ssc.zork.command.CommandParser;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Game {
 
     private boolean isExit = false;
-
     private Scanner scaner = new Scanner(System.in);
-
     private CommandParser commandParser = new CommandParser();
+
+    private Player player = new Player();
+    private List<Room> map = new ArrayList<>();
+
+    public List<Room> getMap() {
+        return map;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
 
     public boolean isExit() {
         return isExit;
