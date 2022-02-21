@@ -18,4 +18,17 @@ public class Map {
 
 
     }
+
+    public static void printMap(){
+        System.out.println("   --------   ");
+        System.out.println("   |      |   ");
+        System.out.println("   |      |   ");
+        System.out.println("   --| |--"   );
+        System.out.println("     | |   "   );
+        System.out.println("     | |   "   );
+        System.out.println("   --| |--"   );
+        System.out.println("   |      |"   );
+        System.out.println("   |      |"   );
+        System.out.println("   --------"   );
+    }
 }

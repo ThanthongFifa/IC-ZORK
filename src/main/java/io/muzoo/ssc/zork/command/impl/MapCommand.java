@@ -6,7 +6,7 @@ import io.muzoo.ssc.zork.command.Command;
 
 import java.util.List;
 
-public class PlayCommand implements Command {
+public class MapCommand implements Command {
     @Override
     public int numArgs() {
         return 0;
@@ -14,14 +14,16 @@ public class PlayCommand implements Command {
 
     @Override
     public String getCommand() {
-        return "play";
+        return "map";
     }
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.setStart(true);
-        Map.createMap(game);
-        System.out.println("Map created");
+        if (game.isStart()){
+            Map.printMap();
+        } else {
+            System.out.println("type 'play' to start the game");
+        }
 
     }
 }

@@ -13,6 +13,7 @@ public class Game {
     private boolean isExit = false;
     private Scanner scaner = new Scanner(System.in);
     private CommandParser commandParser = new CommandParser();
+    private boolean start = false;
 
     private Player player = new Player();
     private List<Room> map = new ArrayList<>();
@@ -34,8 +35,17 @@ public class Game {
         scaner.close();
     }
 
+    public void setStart(boolean start) {
+        this.start = start;
+    }
+
+    public boolean isStart() {
+        return start;
+    }
+
     public void run(){
-        System.out.println("Hey, you. You’re finally awake.");
+        System.out.println("===================== Main Menu =====================");
+        System.out.println("type play to start the game");
 
         while (!isExit() && scaner.hasNextLine()) {
             System.out.println("Enter command: ");
@@ -46,7 +56,7 @@ public class Game {
 
             if (command == null){
                 System.out.println("this command does not exist");
-            } else {
+            } else{
                 command.execute(this, input.subList(1, input.size()));
             }
         }
