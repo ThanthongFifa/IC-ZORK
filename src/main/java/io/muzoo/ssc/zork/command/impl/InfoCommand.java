@@ -35,7 +35,7 @@ public class InfoCommand implements Command {
                 System.out.println("    your inventory is empty.");
             }
 
-            System.out.println("====== GameMap Info ======");
+            System.out.println("====== Map Info ======");
             System.out.println("This place is " + "\"" +  location.getName() + "\"");
             System.out.println("    " +  location.getDescription());
 

@@ -42,6 +42,10 @@ public class Player {
         return curHP;
     }
 
+    public void setCurHP(int curHP) {
+        this.curHP = curHP;
+    }
+
     public void takeItem(Item item){
         //System.out.println("take " + item.getName());
         if(!inventory.containsKey(item.getName())){

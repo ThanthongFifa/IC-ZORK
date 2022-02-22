@@ -1,13 +1,20 @@
-package io.muzoo.ssc.zork;
+package io.muzoo.ssc.zork.GameMap;
 
+import io.muzoo.ssc.zork.Game;
 import io.muzoo.ssc.zork.Item.impl.Axes;
 import io.muzoo.ssc.zork.Item.impl.Potion;
 import io.muzoo.ssc.zork.Monster.impl.Skeleton;
+import io.muzoo.ssc.zork.Room;
 
-public class GameMap {
+public class map2 implements GameMap {
 
-    public static void createMap(Game game){
+    @Override
+    public String name() {
+        return "map2";
+    }
 
+    @Override
+    public void createMap(Game game) {
         Room entrance = new Room("gate","you are in front of a gate of a dungeon");
         Room secondroom = new Room("dungeon","it is dark in here");
 
@@ -15,23 +22,22 @@ public class GameMap {
         game.getMap().add(secondroom);
 
         entrance.setNextroom("north", secondroom);
-        entrance.setItem(new Potion());
 
         secondroom.setNextroom("south", entrance);
         secondroom.setMonster(new Skeleton(secondroom, null));
         secondroom.setItem(new Axes());
 
         game.getPlayer().setLocation(entrance);
-
-
     }
 
-    public static void deleteMap(Game game){
+    @Override
+    public void deleteMap(Game game) {
         game.getMap().clear();
         game.getPlayer().setLocation(null);
     }
 
-    public static void printMap(){
+    @Override
+    public void printMap(){
         System.out.println("================= MAP =================");
         System.out.println("                --------             ");
         System.out.println("                |      |             ");
@@ -45,4 +51,5 @@ public class GameMap {
         System.out.println("                --------             ");
         System.out.println("=======================================");
     }
+
 }

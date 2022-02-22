@@ -30,6 +30,16 @@ public class Game {
         return isExit;
     }
 
+    private String mapName;
+
+    public String getMapName() {
+        return mapName;
+    }
+
+    public void setMapName(String mapName) {
+        this.mapName = mapName;
+    }
+
     public void exit() {
         isExit = true;
         scaner.close();

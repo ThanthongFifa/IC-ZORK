@@ -1,7 +1,9 @@
 package io.muzoo.ssc.zork.command.impl;
 
 import io.muzoo.ssc.zork.Game;
-import io.muzoo.ssc.zork.GameMap;
+import io.muzoo.ssc.zork.GameMap.GameMap;
+import io.muzoo.ssc.zork.GameMap.GameMapFactory;
+import io.muzoo.ssc.zork.GameMap.map1;
 import io.muzoo.ssc.zork.command.Command;
 
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
 public class PlayCommand implements Command {
     @Override
     public int numArgs() {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -19,10 +21,13 @@ public class PlayCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
+        GameMap gameMap = GameMapFactory.get(args.get(0));
         if (!game.isStart()) {
             game.setStart(true);
-            GameMap.createMap(game);
-            System.out.println("GameMap created");
+            gameMap.createMap(game);
+            game.setMapName(args.get(0));
+            game.getPlayer().setCurHP(game.getPlayer().getMaxHP());
+            System.out.println("map1 created");
             System.out.println("\n" +
                     "███████╗████████╗ █████╗ ██████╗ ████████╗    ███╗   ██╗███████╗██╗    ██╗     ██████╗  █████╗ ███╗   ███╗███████╗\n" +
                     "██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝    ████╗  ██║██╔════╝██║    ██║    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝\n" +
@@ -32,7 +37,7 @@ public class PlayCommand implements Command {
                     "╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝\n" +
                     "                                                                                                                  \n");
             System.out.println("=========================================================================================================");
+            System.out.println("Map name: " + game.getMapName());
         }
-
     }
 }
