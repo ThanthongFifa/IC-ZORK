@@ -22,18 +22,23 @@ public class GameMap {
 
     }
 
+    public static void deleteMap(Game game){
+        game.getMap().clear();
+        game.getPlayer().setLocation(null);
+    }
+
     public static void printMap(){
         System.out.println("================= MAP =================");
-        System.out.println("              --------             ");
-        System.out.println("              |      |             ");
-        System.out.println("              |      |             ");
-        System.out.println("              --| |--"             );
-        System.out.println("                | |   "             );
-        System.out.println("                | |   "             );
-        System.out.println("              --| |--"             );
-        System.out.println("              |      |"             );
-        System.out.println("              |      |"             );
-        System.out.println("              --------"             );
+        System.out.println("                --------             ");
+        System.out.println("                |      |             ");
+        System.out.println("                |      |             ");
+        System.out.println("                --| |--              ");
+        System.out.println("                  | |                ");
+        System.out.println("                  | |                ");
+        System.out.println("                --| |--              ");
+        System.out.println("                |      |             ");
+        System.out.println("                |      |             ");
+        System.out.println("                --------             ");
         System.out.println("=======================================");
     }
 }
