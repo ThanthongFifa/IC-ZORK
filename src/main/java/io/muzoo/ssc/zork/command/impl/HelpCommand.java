@@ -25,7 +25,7 @@ public class HelpCommand implements Command {
         for (String command: commands) {
             if (command.equals("go")){
                 System.out.println(command + " [north, east, south, west]");
-            } else if (command.equals("attack")){
+            } else if (command.equals("attack with")){
                 System.out.println(command + " [item name]");
             }
             else {

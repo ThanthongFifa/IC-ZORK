@@ -1,5 +1,6 @@
 package io.muzoo.ssc.zork;
 
+import io.muzoo.ssc.zork.Item.impl.Axes;
 import io.muzoo.ssc.zork.Item.impl.Potion;
 import io.muzoo.ssc.zork.Monster.impl.Skeleton;
 
@@ -18,6 +19,7 @@ public class GameMap {
 
         secondroom.setNextroom("south", entrance);
         secondroom.setMonster(new Skeleton(secondroom, null));
+        secondroom.setItem(new Axes());
 
         game.getPlayer().setLocation(entrance);
 

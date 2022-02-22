@@ -64,4 +64,8 @@ public class Monster {
         }
         return curHP;
     }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
 }
