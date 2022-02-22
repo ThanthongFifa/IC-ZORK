@@ -6,6 +6,7 @@ public abstract class Item {
 
     protected String text;
     protected String name;
+    protected String asciiArt;
     protected int atk;
     protected int hp;
     protected int use;
@@ -39,5 +40,9 @@ public abstract class Item {
 
     public void updateUse() {
         this.use -= 1;
+    }
+
+    public String getAsciiArt() {
+        return asciiArt;
     }
 }

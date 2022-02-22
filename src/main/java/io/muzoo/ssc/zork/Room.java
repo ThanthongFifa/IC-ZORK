@@ -1,6 +1,7 @@
 package io.muzoo.ssc.zork;
 
 import io.muzoo.ssc.zork.Item.Item;
+import io.muzoo.ssc.zork.Monster.Monster;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,5 +50,7 @@ public class Room {
         return item;
     }
 
-
+    public Monster getMonster() {
+        return monster;
+    }
 }

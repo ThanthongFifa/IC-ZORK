@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class Player {
 
-    private int fullHealth;
-    private int currentHealth;
+    private int maxHP;
+    private int curHP;
     private int power;
     private boolean isAlive = true;
     private Room location;
@@ -16,8 +16,8 @@ public class Player {
 
 
     public Player() {
-        fullHealth = 500;
-        currentHealth = 500;
+        maxHP = 500;
+        curHP = 500;
         power = 50;
     }
 
@@ -30,16 +30,16 @@ public class Player {
         this.location = location;
     }
 
-    public int getFullHealth() {
-        return fullHealth;
+    public int getMaxHP() {
+        return maxHP;
     }
 
     public int getPower() {
         return power;
     }
 
-    public int getCurrentHealth() {
-        return currentHealth;
+    public int getCurHP() {
+        return curHP;
     }
 
     public void takeItem(Item item){
@@ -58,5 +58,15 @@ public class Player {
 
     public Map<String, Item> getInventory() {
         return inventory;
+    }
+
+    public int damage(int atkPower){
+        if (curHP - atkPower > 0){
+            curHP -= atkPower;
+        } else {
+            curHP = 0;
+            isAlive = false;
+        }
+        return curHP;
     }
 }
