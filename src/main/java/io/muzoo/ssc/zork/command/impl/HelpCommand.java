@@ -27,6 +27,8 @@ public class HelpCommand implements Command {
                 System.out.println(command + " [north, east, south, west]");
             } else if (command.equals("attack with")){
                 System.out.println(command + " [item name]");
+            } else if(command.equals("play")){
+                System.out.println("play [map name]");
             }
             else {
                 System.out.println(command);

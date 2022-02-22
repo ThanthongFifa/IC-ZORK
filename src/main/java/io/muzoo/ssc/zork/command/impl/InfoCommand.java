@@ -24,6 +24,7 @@ public class InfoCommand implements Command {
         Player player = game.getPlayer();
         Room location = game.getPlayer().getLocation();
         if (game.isStart()) {
+            System.out.println("================================================================\n");
             System.out.println("====== Player Info ======");
             System.out.println("Player max HP: " +  player.getMaxHP());
             System.out.println("Player HP: " +  player.getCurHP());
@@ -34,6 +35,7 @@ public class InfoCommand implements Command {
             } else {
                 System.out.println("    your inventory is empty.");
             }
+            System.out.println("================================================================\n");
 
             System.out.println("====== Map Info ======");
             System.out.println("This place is " + "\"" +  location.getName() + "\"");
@@ -48,6 +50,8 @@ public class InfoCommand implements Command {
             } else {
                 System.out.println("no item here.");
             }
+            System.out.println("================================================================\n");
+
 
             if (location.getMonster() != null){
                 Monster monster = location.getMonster();
@@ -58,8 +62,8 @@ public class InfoCommand implements Command {
                 System.out.println("    Max HP: " + monster.getMaxHP());
                 System.out.println("    Current HP: " + monster.getCurHP());
                 System.out.println("    Attack power: " + monster.getPower());
+                System.out.println("================================================================");
             }
-
         } else {
             System.out.println("type 'play' to start the game");
         }

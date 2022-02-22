@@ -1,6 +1,7 @@
-package io.muzoo.ssc.zork.GameMap;
+package io.muzoo.ssc.zork.GameMap.Maps;
 
 import io.muzoo.ssc.zork.Game;
+import io.muzoo.ssc.zork.GameMap.GameMap;
 import io.muzoo.ssc.zork.Item.impl.Axes;
 import io.muzoo.ssc.zork.Item.impl.Potion;
 import io.muzoo.ssc.zork.Monster.impl.Skeleton;

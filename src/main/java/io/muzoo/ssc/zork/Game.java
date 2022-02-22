@@ -63,7 +63,8 @@ public class Game {
             Command command = CommandFactory.get(input.get(0)); // get first command word
 
             if (command == null){
-                System.out.println("this command does not exist");
+                System.out.println("this command does not exist OR command is incorrect");
+                System.out.println("typr 'help' for help.");
             } else{
                 command.execute(this, input.subList(1, input.size()));
             }

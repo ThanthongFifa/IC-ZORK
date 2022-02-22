@@ -3,7 +3,6 @@ package io.muzoo.ssc.zork.command.impl;
 import io.muzoo.ssc.zork.Game;
 import io.muzoo.ssc.zork.GameMap.GameMap;
 import io.muzoo.ssc.zork.GameMap.GameMapFactory;
-import io.muzoo.ssc.zork.GameMap.map1;
 import io.muzoo.ssc.zork.Item.Item;
 import io.muzoo.ssc.zork.Monster.Monster;
 import io.muzoo.ssc.zork.Player;
