@@ -21,6 +21,9 @@ public class Player {
         power = 50;
     }
 
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
 
     public Room getLocation() {
         return location;
@@ -55,16 +58,17 @@ public class Player {
         }
     }
 
-    public void dropItem(String itemName){
+    public Item dropItem(String itemName){
+        Item item = inventory.get(itemName);
         inventory.remove(itemName);
-
+        return item;
     }
 
     public Map<String, Item> getInventory() {
         return inventory;
     }
 
-    public int damage(int atkPower){
+    public int takeDamage(int atkPower){
         if (curHP - atkPower > 0){
             curHP -= atkPower;
         } else {

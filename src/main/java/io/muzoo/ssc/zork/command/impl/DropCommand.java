@@ -23,8 +23,8 @@ public class DropCommand implements Command {
             Player player = game.getPlayer();
 
             if (player.getInventory().containsKey(args.get(0))) {
-                player.dropItem(args.get(0));
                 System.out.println("you drop " + args.get(0));
+                player.getLocation().setItem(player.dropItem(args.get(0)));
             } else {
                 System.out.println("you don't have that item in your inventory.");
             }

@@ -43,30 +43,43 @@ public class AttackWithCommand implements Command {
         if (player.getInventory().containsKey(args.get(0)) && player.getLocation().getMonster() != null) {
             Monster monster = player.getLocation().getMonster();
             Item item = player.getInventory().get(args.get(0));
+
             System.out.println("================================================================\n");
             System.out.println("you use " + item.getName() + " to attack " + monster.getName());
             if ( playerCri > 1) {
                 System.out.println("CRITICAL HIT!!!");
             }
-            monster.damage(player.getPower() + item.getAtk() * playerCri);
+            monster.takeDamage(player.getPower() + item.getAtk() * playerCri);
             System.out.println("you deal " +  (player.getPower() + item.getAtk() * playerCri) + " damege!!");
             System.out.println("current " + monster.getName() + "HP: " + monster.getCurHP());
+
+            // if monster die it drop item
             if(monster.getCurHP() <= 0){
                 System.out.println(monster.getName() + " slain!");
+                //System.out.println(monster.getDropItem().getName() == null);
+                if(monster.getDropItem() != null){
+                    monster.getLocation().setItem(monster.getDropItem());
+                    System.out.println(monster.getName() + " drop " + monster.getDropItem().getName()+"!!");
+                }
                 monster.setAlive(false);
                 player.getLocation().setMonster(null);
             }
             System.out.println("================================================================\n");
+
+            // if monster is alive it attack back
             if (monster.isAlive()) {
                 System.out.println(monster.getName() + "attack back.");
                 if (monsterCri > 1) {
                     System.out.println("CRITICAL HIT!!!");
                 }
-                player.damage(monster.getPower() * monsterCri);
+                player.takeDamage(monster.getPower() * monsterCri);
                 System.out.println(monster.getName() + "deal " + (monster.getPower() * monsterCri) + " damage!!" );
                 System.out.println("current player HP: " + player.getCurHP());
                 System.out.println("================================================================\n");
+
+                // you die from this fight
                 if (player.getCurHP() <= 0){
+                    player.setAlive(false);
                     System.out.println("\n" +
                             "▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ \n" +
                             " ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ \n" +

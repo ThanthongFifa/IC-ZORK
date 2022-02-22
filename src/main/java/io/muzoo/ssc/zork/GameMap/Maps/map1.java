@@ -41,16 +41,16 @@ public class map1 implements GameMap {
     @Override
     public void printMap(){
         System.out.println("================= MAP =================");
-        System.out.println("                --------             ");
-        System.out.println("                |      |             ");
-        System.out.println("                |      |             ");
-        System.out.println("                --| |--              ");
-        System.out.println("                  | |                ");
-        System.out.println("                  | |                ");
-        System.out.println("                --| |--              ");
-        System.out.println("                |      |             ");
-        System.out.println("                |      |             ");
-        System.out.println("                --------             ");
+        System.out.println("                ---------             ");
+        System.out.println("                |       |             ");
+        System.out.println("                |       |             ");
+        System.out.println("                --|  |--              ");
+        System.out.println("                  |  |                ");
+        System.out.println("                  |  |                ");
+        System.out.println("                --|  |--              ");
+        System.out.println("                |       |             ");
+        System.out.println("                |       |             ");
+        System.out.println("                ---------             ");
         System.out.println("=======================================");
     }
 

@@ -9,7 +9,7 @@ public class Monster {
     protected int maxHP;
     protected int curHP;
     protected int power;
-    protected Item dropItem;
+    protected Item dropItem = null;
     protected Room location;
     protected String asciiArt;
     protected String name;
@@ -55,7 +55,7 @@ public class Monster {
         return name;
     }
 
-    public int damage(int atkPower){
+    public int takeDamage(int atkPower){
         if (curHP - atkPower > 0){
             curHP -= atkPower;
         } else {
