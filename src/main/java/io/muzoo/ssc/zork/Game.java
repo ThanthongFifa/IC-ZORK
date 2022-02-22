@@ -44,9 +44,7 @@ public class Game {
     }
 
     public void run(){
-        System.out.println("===================== Main Menu =====================");
-        System.out.println("type play to start the game");
-
+        mainMenu();
         while (!isExit() && scaner.hasNextLine()) {
             System.out.println("Enter command: ");
             String rawInput = scaner.nextLine();
@@ -60,5 +58,11 @@ public class Game {
                 command.execute(this, input.subList(1, input.size()));
             }
         }
+    }
+
+    public void mainMenu(){
+        System.out.println("===================== Main Menu =====================");
+        System.out.println("type 'play' to start the game");
+
     }
 }

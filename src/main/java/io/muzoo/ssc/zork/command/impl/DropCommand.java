@@ -19,14 +19,17 @@ public class DropCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        Player player = game.getPlayer();
+        if(game.isStart()) {
+            Player player = game.getPlayer();
 
-        if (player.getInventory().containsKey(args.get(0))){
-            player.dropItem(args.get(0));
-            System.out.println("you drop " + args.get(0));
+            if (player.getInventory().containsKey(args.get(0))) {
+                player.dropItem(args.get(0));
+                System.out.println("you drop " + args.get(0));
+            } else {
+                System.out.println("you don't have that item in your inventory.");
+            }
         } else {
-            System.out.println("you don't have that item in your inventory.");
+            System.out.println("type 'play' to start the game");
         }
-
     }
 }

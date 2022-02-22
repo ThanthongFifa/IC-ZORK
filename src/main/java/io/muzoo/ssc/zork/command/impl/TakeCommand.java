@@ -20,16 +20,19 @@ public class TakeCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        Player player = game.getPlayer();
-        Room location = game.getPlayer().getLocation();
+        if (game.isStart()) {
+            Player player = game.getPlayer();
+            Room location = game.getPlayer().getLocation();
 
-        if (location.getItem() != null){
-            System.out.println(location.getItem().getName() + " has been added to your inventory.");
-            player.takeItem(location.getItem());
-            location.setItem(null);
+            if (location.getItem() != null) {
+                System.out.println(location.getItem().getName() + " has been added to your inventory.");
+                player.takeItem(location.getItem());
+                location.setItem(null);
+            } else {
+                System.out.println("no item in this room.");
+            }
         } else {
-            System.out.println("no item in this room.");
+            System.out.println("type 'play' to start the game");
         }
-
     }
 }
