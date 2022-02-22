@@ -19,10 +19,6 @@ public class Room {
         this.name = name;
     }
 
-    public void setAdjacentRoom(Map<String, Room> adjacentRoom) {
-        this.adjacentRoom = adjacentRoom;
-    }
-
     public Room nextRoom(String direction){
         return adjacentRoom.get(direction);
     }
@@ -48,4 +44,10 @@ public class Room {
     public String getName() {
         return name;
     }
+
+    public Item getItem() {
+        return item;
+    }
+
+
 }

@@ -1,7 +1,7 @@
 package io.muzoo.ssc.zork.command.impl;
 
 import io.muzoo.ssc.zork.Game;
-import io.muzoo.ssc.zork.Map;
+import io.muzoo.ssc.zork.GameMap;
 import io.muzoo.ssc.zork.command.Command;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class MapCommand implements Command {
     @Override
     public void execute(Game game, List<String> args) {
         if (game.isStart()){
-            Map.printMap();
+            GameMap.printMap();
         } else {
             System.out.println("type 'play' to start the game");
         }

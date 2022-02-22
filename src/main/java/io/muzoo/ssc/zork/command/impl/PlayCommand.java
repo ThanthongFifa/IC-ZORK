@@ -1,7 +1,7 @@
 package io.muzoo.ssc.zork.command.impl;
 
 import io.muzoo.ssc.zork.Game;
-import io.muzoo.ssc.zork.Map;
+import io.muzoo.ssc.zork.GameMap;
 import io.muzoo.ssc.zork.command.Command;
 
 import java.util.List;
@@ -19,9 +19,11 @@ public class PlayCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.setStart(true);
-        Map.createMap(game);
-        System.out.println("Map created");
+        if (!game.isStart()) {
+            game.setStart(true);
+            GameMap.createMap(game);
+            System.out.println("GameMap created");
+        }
 
     }
 }
