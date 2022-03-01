@@ -1,9 +1,11 @@
 package io.muzoo.ssc.zork;
 
+import io.muzoo.ssc.zork.GameMap.GameMap;
 import io.muzoo.ssc.zork.command.Command;
 import io.muzoo.ssc.zork.command.CommandFactory;
 import io.muzoo.ssc.zork.command.CommandParser;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,6 +19,8 @@ public class Game {
 
     private Player player = new Player();
     private List<Room> map = new ArrayList<>();
+
+    private GameMap gameMap;
 
     public List<Room> getMap() {
         return map;
@@ -36,6 +40,18 @@ public class Game {
         return mapName;
     }
 
+    public GameMap getGameMap() {
+        return gameMap;
+    }
+
+    public void setGameMap(GameMap gameMap) {
+        this.gameMap = gameMap;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     public void setMapName(String mapName) {
         this.mapName = mapName;
     }
@@ -53,7 +69,7 @@ public class Game {
         return start;
     }
 
-    public void run(){
+    public void run() throws IOException {
         mainMenu();
         while (!isExit() && scaner.hasNextLine()) {
             System.out.println("Enter command: ");

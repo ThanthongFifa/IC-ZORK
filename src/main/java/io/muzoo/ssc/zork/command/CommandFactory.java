@@ -22,7 +22,9 @@ public class CommandFactory {
             QuitCommand.class,
             HelpCommand.class,
             AttackWithCommand.class,
-            HealCommand.class
+            HealCommand.class,
+            SaveCommand.class,
+            LoadCommand.class
     );
 
     private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
