@@ -14,6 +14,7 @@ public class Monster {
     protected String asciiArt;
     protected String name;
 
+
     public Monster(boolean isAlive, int maxHP, int power, Room location, Item dropItem) {
         this.isAlive = isAlive;
         this.maxHP = maxHP;

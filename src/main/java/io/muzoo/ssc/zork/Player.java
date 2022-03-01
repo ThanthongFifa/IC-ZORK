@@ -3,6 +3,7 @@ package io.muzoo.ssc.zork;
 import io.muzoo.ssc.zork.Item.Item;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class Player {

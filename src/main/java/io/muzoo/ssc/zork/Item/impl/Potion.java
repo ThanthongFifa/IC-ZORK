@@ -6,7 +6,7 @@ import io.muzoo.ssc.zork.Item.Item;
 public class Potion extends Item {
     public Potion() {
         super(1, 100, 1);
-        name = "Health potion";
+        name = "HP potion";
         text = "This heal you. +100HP";
         asciiArt = "\n" +
                 "  |~|  \n" +

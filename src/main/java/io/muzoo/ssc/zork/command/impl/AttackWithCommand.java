@@ -44,13 +44,14 @@ public class AttackWithCommand implements Command {
             Monster monster = player.getLocation().getMonster();
             Item item = player.getInventory().get(args.get(0));
 
+            //player attack with weapon
             System.out.println("================================================================\n");
             System.out.println("you use " + item.getName() + " to attack " + monster.getName());
             if ( playerCri > 1) {
                 System.out.println("CRITICAL HIT!!!");
             }
             monster.takeDamage(player.getPower() + item.getAtk() * playerCri);
-            System.out.println("you deal " +  (player.getPower() + item.getAtk() * playerCri) + " damege!!");
+            System.out.println("you deal " +  (item.getAtk() * playerCri) + " damege!!");
             System.out.println("current " + monster.getName() + "HP: " + monster.getCurHP());
 
             // if monster die it drop item

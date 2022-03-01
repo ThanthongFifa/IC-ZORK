@@ -21,7 +21,8 @@ public class CommandFactory {
             DropCommand.class,
             QuitCommand.class,
             HelpCommand.class,
-            AttackWithCommand.class
+            AttackWithCommand.class,
+            HealCommand.class
     );
 
     private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
