@@ -1,6 +1,8 @@
 package io.muzoo.ssc.zork.command.impl;
 
 import io.muzoo.ssc.zork.Game;
+import io.muzoo.ssc.zork.GameMap.GameMap;
+import io.muzoo.ssc.zork.GameMap.GameMapFactory;
 import io.muzoo.ssc.zork.Player;
 import io.muzoo.ssc.zork.Room;
 import io.muzoo.ssc.zork.command.Command;
@@ -31,6 +33,23 @@ public class TakeCommand implements Command {
             } else {
                 System.out.println("no item in this room.");
             }
+
+            if (player.getInventory().containsKey("gem")){
+                System.out.println("\n" +
+                        "██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗\n" +
+                        "╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║\n" +
+                        " ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║\n" +
+                        "  ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║\n" +
+                        "   ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║\n" +
+                        "   ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝\n" +
+                        "                                                      \n");
+                GameMap gameMap = GameMapFactory.get(game.getMapName());
+                gameMap.deleteMap(game);
+                game.setStart(false);
+                System.out.println("================================================================\n");
+                System.out.println("type 'play' to start again.");
+            }
+
         } else {
             System.out.println("type 'play' to start the game");
         }

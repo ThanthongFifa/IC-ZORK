@@ -1,5 +1,7 @@
 package io.muzoo.ssc.zork;
 
+import io.muzoo.ssc.zork.GameMap.GameMap;
+import io.muzoo.ssc.zork.GameMap.GameMapFactory;
 import io.muzoo.ssc.zork.Item.Item;
 
 import java.util.HashMap;

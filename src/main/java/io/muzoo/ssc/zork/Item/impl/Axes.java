@@ -7,7 +7,7 @@ public class Axes extends Item {
     public Axes() {
         super(50, 0, 100);
         name = "Axes";
-        text = "war axes deal a lot of damage, and break shield.";
+        text = "war axes deal a lot of damage.";
         asciiArt = " _________________.---.______\n" +
                 "(_(______________(_o o_(____()\n" +
                 "        mrf  .___.'. .'.___.\n" +
